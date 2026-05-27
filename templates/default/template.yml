@@ -1,0 +1,18 @@
+name: "Toucan website"
+description: "Official template for the Toucan website."
+url: "https://github.com/toucansites/website"
+version: "1.0.0-beta.5"
+generatorVersion:
+    value: "1.0.0-beta.6"
+    type: "upNextMajor"
+demo:
+    url: "https://toucansites.com/"
+authors:
+    - name: "Binary Birds Kft."
+      url: "https://binarybirds.com/"
+license:
+    name: "MIT license"
+    url: "https://github.com/toucansites/website?tab=MIT-1-ov-file#readme"
+tags:
+    - "toucan"
+    - "website"

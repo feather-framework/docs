@@ -1,0 +1,41 @@
+id: category
+
+properties:
+    order:
+        type: int
+        required: true
+
+queries:
+    guides:
+        contentType: guide
+        scope: list
+        limit: 10
+        orderBy:
+            - key: order
+              direction: asc
+        filter:
+            key: category
+            operator: equals
+            value: "{{id}}"
+    
+    prev:
+        contentType: category
+        limit: 1
+        filter:
+            key: order
+            operator: lessThan
+            value: "{{order}}"
+        orderBy:
+            - key: order
+              direction: desc
+
+    next:
+        contentType: category
+        limit: 1
+        filter:
+            key: order
+            operator: greaterThan
+            value: "{{order}}"
+        orderBy:
+            - key: order
+              direction: asc

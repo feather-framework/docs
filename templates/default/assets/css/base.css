@@ -1,0 +1,148 @@
+a:link {
+    color: var(--link-color);
+}
+a:visited {
+    color: var(--link-color-visited);
+}
+a:hover {
+    color: var(--link-color-hover);
+    text-decoration: none;
+}
+a:active {
+    color: var(--link-color-hover);
+}
+html, body {
+    padding: 0;
+    margin: 0;
+}
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+h1 {
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
+    line-height: 1.05;
+}
+h2 {
+    font-size: clamp(1.65rem, 3vw, 2.5rem);
+    line-height: 1.15;
+    margin-top: 2.5rem;
+}
+h3 {
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    line-height: 1.25;
+    margin-top: 2rem;
+}
+h4 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+}
+h5 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+h6 {
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.75rem;
+    font-weight: 800;
+}
+hr {
+    border: none;
+    border-bottom: 1px solid var(--background-color-2);
+}
+hr.spacer {
+    border: none;
+}
+p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    margin-top: 0;
+    color: var(--text-color-2);
+    margin-bottom: 1.25rem;
+}
+pre {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    background: var(--background-color-1);
+    margin: 1.5rem auto;
+    border: 1px solid var(--background-color-2);
+    border-radius: 8px;
+    margin-bottom: 1.75rem;
+    padding: 1rem;
+    max-width: 100%;
+}
+pre code {
+    text-shadow: none;
+    font-family: monospace;
+    display: block;
+    overflow-x: auto;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+}
+pre code a {
+    border-bottom: 1px dotted var(--text-color);
+}
+li {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--text-color-2);
+    margin-bottom: 0.65rem;
+}
+p code, li code {
+    font-family: monospace;
+    font-weight: bold;
+}
+p code a, li code a {
+    font-weight: normal;
+}
+li p {
+    margin: 0;
+}
+p code a, li code a {
+    border-bottom: 1px dotted var(--text-color);
+}
+section {
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+img.small {
+    width: 32px;
+}
+img.medium {
+    width: 64px;
+}
+img.large {
+    width: 128px;
+}
+img.rounded {
+    border-radius: 50%;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+.selection-off {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

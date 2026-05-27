@@ -1,0 +1,73 @@
+
+footer#site-footer {
+    position: relative;
+    max-width: 1360px;
+    margin: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--background-color-2);
+    text-align: center;
+}
+@media screen and (min-width: 1440px) {
+    footer#site-footer {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width: 600px) {
+    footer#site-footer {
+        text-align: left;
+    }
+}
+footer#site-footer #logo-image {
+    max-width: 220px;
+}
+footer#site-footer ul {
+    margin: 0;
+    padding: 0;
+}
+footer#site-footer li {
+    list-style-type: none;
+    margin-bottom: 0.45rem;
+}
+footer#site-footer a {
+    color: var(--text-color-3);
+    font-weight: bold;
+    text-decoration: none;
+}
+footer#site-footer .grid div {
+    padding: 0.75rem 0;
+}
+footer#site-footer h4 {
+    color: var(--text-color-1);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+footer#site-footer li a, footer#site-footer li a:visited, footer#site-footer li a:active, footer#site-footer li a:link {
+    display: inline-block;
+    position: relative;
+    padding: 0.15rem 0;
+    color: var(--text-color-3);
+    background: transparent;
+    transition: color .15s ease;
+}
+footer#site-footer li a:hover {
+    color: var(--link-color-hover);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+footer#site-footer li a:focus-visible {
+    outline: 3px solid var(--link-color-hover);
+    outline-offset: 3px;
+}
+footer#site-footer p,
+footer#site-footer small {
+    color: var(--text-color-3);
+}
+footer#site-footer p a,
+footer#site-footer small a {
+    color: var(--link-color);
+}
+footer#site-footer p a:hover,
+footer#site-footer small a:hover {
+    color: var(--link-color-hover);
+}

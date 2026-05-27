@@ -1,0 +1,9 @@
+<div class="card centered">
+    {{#image}}
+    <a href="{{permalink}}">
+        <img class="large rounded" src="{{.}}" alt="{{title}}">
+    </a>
+    {{/image}}
+    <h2><a href="{{permalink}}">{{title}}</a></h2>
+    <p>{{count(posts)}} articles</p>
+</div>

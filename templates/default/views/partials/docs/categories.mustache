@@ -1,0 +1,14 @@
+<aside>
+    <ul>
+    {{#context.categories}}
+        <li class="category">
+            <a href="{{permalink}}">{{title}}</a>
+            <ul>
+            {{#guides}}
+                <li><a href="{{permalink}}">{{title}}</a></li>
+            {{/guides}}
+            </ul>
+        </li>
+    {{/context.categories}}
+    </ul>
+</aside>

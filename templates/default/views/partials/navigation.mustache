@@ -1,0 +1,18 @@
+<header id="navigation">
+    <a href="/">
+        <picture>
+            <img
+                src="{{baseUrl}}/images/logos/logo.png"
+                alt="Logo of {{site.name}}"
+                title="{{site.name}}"
+            >
+        </picture>
+    </a>
+    <nav>
+        <div class="menu-items">
+            {{#site.navigation}}
+            <a href="{{url}}"{{#class}} class="{{.}}"{{/class}}>{{label}}</a>
+            {{/site.navigation}}
+        </div>
+    </nav>
+</header>

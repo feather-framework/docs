@@ -1,0 +1,8 @@
+name: "Feather Framework"
+description: ""
+language: "en-US"
+navigation:
+    - label: "News"
+      url: "/news/"
+    - label: "Documentation"
+      url: "/docs/"

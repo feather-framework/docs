@@ -1,0 +1,8 @@
+.DS_Store
+.swiftpm
+.vscode
+.build
+/docs
+/docs-live
+/dist
+
