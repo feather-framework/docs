@@ -17,7 +17,7 @@ queries:
             key: category
             operator: equals
             value: "{{id}}"
-    
+
     prev:
         contentType: category
         limit: 1

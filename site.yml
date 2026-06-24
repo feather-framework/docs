@@ -1,8 +1,9 @@
 name: "Feather Framework"
-description: ""
+description: "Learn how to build server-side Swift applications with Feather Framework."
 language: "en-US"
 navigation:
-    - label: "News"
-      url: "/news/"
     - label: "Documentation"
-      url: "/docs/"
+      url: "/"
+    - label: "GitHub"
+      url: "https://github.com/feather-framework/"
+      target: "_blank"

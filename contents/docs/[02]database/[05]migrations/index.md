@@ -1,7 +1,7 @@
 ---
 category: "database"
 title: "Migrations"
-description: "Learn how to define, organize, and run database migrations for Feather applications."
+description: "Learn how to define, organize, and run database migrations for Feather Framework applications."
 order: 5
 ---
 
@@ -30,7 +30,7 @@ In simple terms: migrations make database setup predictable.
 
 ## Project setup
 
-In a Feather application, migrations are commonly placed in the Infrastructure layer, next to the database tables they create. The migrator itself can be a separate executable target.
+In a Feather Framework application, migrations are commonly placed in the Infrastructure layer, next to the database tables they create. The migrator itself can be a separate executable target.
 
 A package can expose a `Migrator` target like this:
 
@@ -396,7 +396,7 @@ struct Entrypoint {
 
 The important part is the lifecycle. `PostgresClient` is a long-running service, so it must be running while the migrator uses the database. In a real project, configuration usually comes from environment variables or config files instead of hard-coded values.
 
-The same pattern works with other Feather database drivers too. Start the driver, open a connection, build the migration list with that connection, and call `migrator.apply(on:)`.
+The same pattern works with other Feather Database drivers too. Start the driver, open a connection, build the migration list with that connection, and call `migrator.apply(on:)`.
 
 For local development, this can be a separate executable target, for example:
 

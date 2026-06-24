@@ -12,7 +12,7 @@ order: 3
 
 It lets your application use the same Feather Database API while connecting to a MySQL-compatible database server. This is useful when your application needs a production-ready relational database with transactions, indexes, constraints, and a familiar SQL dialect.
 
-The driver is built on top of `MySQLNIO`, supports modern Swift concurrency, and provides the same connection, transaction, query, and row-decoding style as the other Feather database drivers.
+The driver is built on top of `MySQLNIO`, supports modern Swift concurrency, and provides the same connection, transaction, query, and row-decoding style as the other Feather Database drivers.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Add the MySQL driver to your `Package.swift` dependencies:
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-database-mysql",
-    exact: "1.0.0-beta.5"
+    exact: "1.0.0-rc.1"
 ),
 ```
 
@@ -119,7 +119,7 @@ let connection = try await MySQLConnection.connect(
 .get()
 ```
 
-Finally, wrap it in a Feather database client:
+Finally, wrap it in a Feather Database client:
 
 ```swift
 let database = DatabaseClientMySQL(

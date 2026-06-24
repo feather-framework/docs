@@ -11,7 +11,7 @@
     <nav>
         <div class="menu-items">
             {{#site.navigation}}
-            <a href="{{url}}"{{#class}} class="{{.}}"{{/class}}>{{label}}</a>
+            <a href="{{url}}"{{#class}} class="{{.}}"{{/class}}{{#target}} target="{{.}}"{{/target}}>{{label}}</a>
             {{/site.navigation}}
         </div>
     </nav>

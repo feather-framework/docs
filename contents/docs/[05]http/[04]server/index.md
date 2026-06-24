@@ -10,19 +10,19 @@ order: 4
 
 A server target is the executable that starts your HTTP application.
 
-In a Feather or FATHOMS-style project, the server target usually stays thin. It loads configuration, builds the HTTP application, wires modules and infrastructure, registers routes, then starts the service loop.
+In a Feather Framework project, the server target usually stays thin. It loads configuration, builds the HTTP application, wires dependencies, registers routes, then starts the service loop.
 
 This is similar to a `Migrator` target: the executable has one clear job, and most reusable logic lives in modules outside the entrypoint.
 
 ## Choose Hummingbird or Vapor
 
-Feather can work with either Hummingbird or Vapor.
+Feather Framework can work with either Hummingbird or Vapor.
 
 Hummingbird is a lightweight, modular Swift web framework built around SwiftNIO. It is a good default when you want a small server layer and explicit composition.
 
 Vapor is a mature Swift web framework with a large ecosystem. It provides routing, middleware, configuration patterns, and many web application tools.
 
-FATHOMS and Feather are not replacements for these frameworks. Hummingbird or Vapor handles the HTTP server layer. Feather components and FATHOMS architecture help organize the application code around that layer.
+Feather Framework is not a replacement for these frameworks. Hummingbird or Vapor handles the HTTP server layer. Feather Framework components help organize the application code around that layer.
 
 ## Package setup
 
@@ -251,7 +251,7 @@ func routes(_ app: Application) throws {
 
 For larger applications, keep the same idea as the Hummingbird setup: load configuration, build infrastructure, build modules, register routes, then run the app.
 
-## Where Feather fits
+## Where Feather Framework fits
 
 The `Server` target is the place where concrete choices are made.
 

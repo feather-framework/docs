@@ -1,16 +1,16 @@
 ---
 category: "getting-started"
-title: "Feather"
-description: "Learn how Feather's core components help you build database, storage, mail, HTTP, and OpenAPI features in server-side Swift applications."
+title: "Feather Framework"
+description: "Learn how Feather Framework's core components help you build database, storage, mail, HTTP, and OpenAPI features in server-side Swift applications."
 order: 2
 ---
 
-# Feather
+# Feather Framework
 ---
 
 Feather Framework is built from focused components. Each component solves a common backend problem through a small, consistent Swift API.
 
-The goal is not to force every project into one large framework. Instead, Feather gives you practical building blocks that can be used together or separately. Your application can depend on stable interfaces, while the concrete implementation can come from the driver, provider, or executor that fits your environment.
+The goal is not to force every project into one large framework. Instead, Feather Framework gives you practical building blocks that can be used together or separately. Your application can depend on stable interfaces, while the concrete implementation can come from the driver, provider, or executor that fits your environment.
 
 This approach keeps application code cleaner. It also makes testing easier, because you can replace real infrastructure with mock or ephemeral implementations when needed.
 
@@ -93,7 +93,7 @@ It also supports automatic identifier generation and resolution, which helps kee
 
 ## Shared qualities
 
-The Feather components follow the same general direction:
+The Feather Framework components follow the same general direction:
 
 - They are designed for modern Swift concurrency.
 - They provide focused abstractions instead of large all-in-one systems.

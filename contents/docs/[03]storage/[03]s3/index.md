@@ -127,7 +127,7 @@ S3 does not have real directories in the same way a filesystem does. Prefixes ar
 
 ## Multipart upload
 
-The S3 driver supports the common Feather multipart upload flow:
+The S3 driver supports the common Feather Storage multipart upload flow:
 
 ```swift
 let uploadId = try await storage.createMultipartId(

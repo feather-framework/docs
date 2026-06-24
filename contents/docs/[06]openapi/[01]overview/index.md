@@ -83,4 +83,4 @@ Client integration
 Hummingbird or Vapor HTTP layer
 ```
 
-Feather does not force one server framework. The generated API layer can be connected to the HTTP server layer that fits your application.
+Feather Framework does not force one server framework. The generated API layer can be connected to the HTTP server layer that fits your application.

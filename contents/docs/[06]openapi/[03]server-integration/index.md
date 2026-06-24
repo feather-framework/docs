@@ -77,11 +77,11 @@ This connects generated OpenAPI operations to your server framework.
 
 ## Works with Hummingbird and Vapor
 
-Feather is not tied to one HTTP server.
+Feather Framework is not tied to one HTTP server.
 
-The OpenAPI specification belongs to the application contract. The HTTP server layer can be Hummingbird or Vapor, depending on what your project uses. Feather and FATHOMS are designed to work with both server frameworks.
+The OpenAPI specification belongs to the application contract. The HTTP server layer can be Hummingbird or Vapor, depending on what your project uses. Feather Framework is designed to work with both server frameworks.
 
-Hummingbird and Vapor handle routing, middleware, request handling, and the HTTP server lifecycle. Feather sits at a higher application-organization level and helps you structure the reusable pieces around that server layer.
+Hummingbird and Vapor handle routing, middleware, request handling, and the HTTP server lifecycle. Feather Framework sits at a higher application-organization level and helps you structure the reusable pieces around that server layer.
 
 ## Testing OpenAPI routes
 

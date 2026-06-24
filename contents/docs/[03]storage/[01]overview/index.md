@@ -43,7 +43,7 @@ A key is similar to a path:
 "exports/orders.json"
 ```
 
-The exact storage backend may not have real folders. S3, for example, stores objects by key and treats `/` as part of the name. The filesystem driver stores keys under a root directory. Feather gives both cases the same shape in your code.
+The exact storage backend may not have real folders. S3, for example, stores objects by key and treats `/` as part of the name. The filesystem driver stores keys under a root directory. Feather Storage gives both cases the same shape in your code.
 
 ## Upload and download
 

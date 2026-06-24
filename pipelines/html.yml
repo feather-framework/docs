@@ -9,53 +9,22 @@ assets:
           property: css
           resolvePath: true
           input:
-                name: "style" 
-                ext: "css"
+              name: "style"
+              ext: "css"
         - action: add
           property: js
           resolvePath: true
           input:
-                name: "main" 
-                ext: "js"
+              name: "main"
+              ext: "js"
         - action: set
           property: image
           resolvePath: true
           input:
-                name: "cover" 
-                ext: "jpg"
+              name: "cover"
+              ext: "jpg"
 
-queries: 
-    posts:
-        contentType: post
-        scope: detail
-        limit: 3
-        orderBy:
-            - key: publication
-              direction: desc
-    featured:
-        contentType: post
-        scope: detail
-        filter:
-            key: featured
-            operator: equals
-            value: true
-        orderBy:
-            - key: publication
-              direction: desc
-    authors:
-        contentType: author
-        scope: detail
-        limit: 12
-        orderBy:
-            - key: name
-              direction: asc
-    tags:
-        contentType: tag
-        scope: detail
-        limit: 12
-        orderBy:
-            - key: title
-              direction: asc
+queries:
     categories:
         contentType: category
         scope: detail
@@ -66,43 +35,27 @@ queries:
 dataTypes:
     date:
         formats:
-            full: 
+            full:
                 format: "yyyy/MM/dd"
-            year: 
+            year:
                 format: "y"
 
-contentTypes: 
+contentTypes:
     include:
         - page
-        - author
-        - tag
-        - post
         - guide
         - category
 
 iterators:
-    post.pagination:
-        contentType: post
-        scope: detail
-        limit: 12
-        orderBy:
-            - key: publication
-              direction: desc
 
 transformers:
 
-engine: 
+engine:
     id: mustache
     options:
-        contentTypes: 
+        contentTypes:
             page:
                 view: "pages.default"
-            author:
-                view: "blog.author.default"
-            tag:
-                view: "blog.tag.default"
-            post:
-                view: "blog.post.default"
             category:
                 view: "docs.category.default"
             guide:

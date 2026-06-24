@@ -12,7 +12,7 @@ order: 2
 
 It lets your application use the same Feather Database API while storing data in SQLite. This is useful for local development, test environments, small services, tools, prototypes, and applications that need a simple file-based database.
 
-The driver is built on top of `SQLiteNIO`, supports modern Swift concurrency, uses a connection pool, and provides the same connection, transaction, query, and row-decoding style as the other Feather database drivers.
+The driver is built on top of `SQLiteNIO`, supports modern Swift concurrency, uses a connection pool, and provides the same connection, transaction, query, and row-decoding style as the other Feather Database drivers.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Add the SQLite driver to your `Package.swift` dependencies:
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-database-sqlite",
-    exact: "1.0.0-beta.9"
+    exact: "1.0.0-rc.1"
 ),
 ```
 

@@ -12,7 +12,7 @@ order: 4
 
 It lets your application use the same Feather Database API while connecting to PostgreSQL. This is useful when your application needs a powerful relational database with transactions, constraints, indexes, schemas, row-level locking, and a rich SQL feature set.
 
-The driver is built on top of `PostgresNIO`, supports modern Swift concurrency, and provides the same connection, transaction, query, and row-decoding style as the other Feather database drivers.
+The driver is built on top of `PostgresNIO`, supports modern Swift concurrency, and provides the same connection, transaction, query, and row-decoding style as the other Feather Database drivers.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Add the Postgres driver to your `Package.swift` dependencies:
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-database-postgres",
-    exact: "1.0.0-beta.6"
+    exact: "1.0.0-rc.1"
 ),
 ```
 
@@ -111,7 +111,7 @@ let client = PostgresClient(
 )
 ```
 
-Then wrap it in a Feather database client:
+Then wrap it in a Feather Database client:
 
 ```swift
 let database = DatabaseClientPostgres(

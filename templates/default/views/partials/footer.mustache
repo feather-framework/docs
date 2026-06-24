@@ -4,21 +4,18 @@
         <div>
             <h4>Menu</h4>
             <ul>
-                <li><a href="{{baseUrl}}/news/">News</a></li>
-                <li><a href="{{baseUrl}}/docs/">Docs</a></li>
-                <li><a href="{{baseUrl}}/faq/">FAQ</a></li>
-                <li><a href="{{baseUrl}}/showcases/">Showcases</a></li>
-                <li><a href="{{baseUrl}}/contact/">Contact</a></li>
+                {{#site.navigation}}
+                <li><a href="{{url}}"{{#target}} target="{{.}}"{{/target}}>{{label}}</a></li>
+                {{/site.navigation}}
             </ul>
         </div>
         
         <div>
             <h4>Links</h4>
             <ul>
-                <li><a href="https://github.com/feather-framework/">GitHub</a></li>
-                <li><a href="https://binarybirds.com/">Binary Birds</a></li>
-                <li><a href="https://x.com/tiborbodecs">tiborbodecs</a></li>
-                <li><a href="{{baseUrl}}/rss.xml" target="_blank">RSS</a></li>
+                <li><a href="https://binarybirds.com/" target="_blank">Binary Birds</a></li>
+                <li><a href="https://swiftonserver.com/" target="_blank">swiftonserver.com</a></li>
+                <li><a href="https://theswiftdev.com/" target="_blank">theswiftdev.com</a></li>
                 <li><a href="{{baseUrl}}/sitemap.xml" target="_blank">Sitemap</a></li>
             </ul>
         </div>
@@ -36,11 +33,11 @@
         </div>
         
         <div>
-            <h4>Feather</h4>
-            <p><small>Modular backend components<br>for server-side <a href="https://swift.org/" target="_blank">Swift</a>.</small></p>
+            <h4>Feather Framework</h4>
+            <p><small>Backend components for server-side Swift.</small></p>
             <small><br>
                 Binary Birds Kft.<br>
-                &copy; 2023 - {{generation.formats.year}}<br>
+                &copy; 2022 - 2026<br>
                 <a href="https://github.com/feather-framework" target="_blank">Open source on GitHub</a></small>
         </div>
     </div>

@@ -169,7 +169,7 @@ Every table should have a clear ID strategy. There are two common options:
 - Generate IDs in the application.
 - Generate IDs in the database.
 
-Application-generated IDs are common in Feather-style applications because they are available before the row is inserted. This is useful when several related rows need to be created together.
+Application-generated IDs are common in Feather Framework applications because they are available before the row is inserted. This is useful when several related rows need to be created together.
 
 ```swift
 struct CreateBook {
