@@ -30,6 +30,14 @@ Available database driver implementations include:
 - [PostgreSQL](https://github.com/feather-framework/feather-database-postgres)
 - [MySQL](https://github.com/feather-framework/feather-database-mysql)
 
+## Feather DBAL
+
+[Feather DBAL](https://github.com/feather-framework/feather-dbal) builds typed table definitions and database access on top of Feather Database and Feather SQL.
+
+Use DBAL when the application needs reusable table schemas, typed insert, update, select, and delete operations, migrations, and a consistent access layer across PostgreSQL, MySQL, and SQLite. DBAL keeps those operations independent from the concrete database driver, while the Database layer owns connections and driver integration.
+
+The [DBAL documentation](/docs/dbal/) explains the layers in order: the SQL builder, typed access layer, migrations, and advanced database patterns.
+
 ## Feather Mail
 
 [Feather Mail](https://github.com/feather-framework/feather-mail) provides an abstract mail component for Swift applications.
