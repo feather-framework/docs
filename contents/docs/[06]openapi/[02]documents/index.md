@@ -1,7 +1,7 @@
 ---
 category: "openapi"
 title: "Documents"
-description: "Build a complete Feather OpenAPI document from a model, schemas, operations, and paths."
+description: "Build a complete Feather OpenAPI document from namespaces, schemas, operations, and paths."
 order: 2
 ---
 

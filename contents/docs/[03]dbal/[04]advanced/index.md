@@ -1,7 +1,7 @@
 ---
 category: "dbal"
 title: "Advanced"
-description: "Apply production database patterns with Feather DBAL, using the System Module Variable table for constraints, IDs, timestamps, and indexes."
+description: "Apply production database patterns with Feather DBAL, using the System Module Variable table for constraints, IDs, timestamps, indexes, and foreign keys."
 order: 5
 ---
 

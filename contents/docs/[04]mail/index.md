@@ -14,4 +14,4 @@ Most applications eventually need to send sign-in links, invitations, password r
 
 Use `FeatherMailTesting` for in-memory tests and previews, SMTP for standard mail servers, and SES when your infrastructure uses Amazon Simple Email Service.
 
-This section explains the common mail model first, then walks through each driver.
+This section explains the common mail model first, then walks through each mail implementation.

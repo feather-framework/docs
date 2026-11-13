@@ -1,7 +1,7 @@
 ---
 type: "category"
 title: "DBAL"
-description: "Learn how Feather DBAL models tables, builds typed database access, and connects the same application code to different SQL drivers."
+description: "Learn how Feather DBAL models tables, builds typed database access, and keeps the same access code compatible with different SQL drivers."
 order: 4
 ---
 
