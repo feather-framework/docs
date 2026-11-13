@@ -82,4 +82,4 @@ catch {
 }
 ```
 
-Use [SMTP](/docs/mail/smtp/) or [Amazon SES](/docs/mail/ses/) when the application should deliver real messages. `FeatherMailTesting` is deliberately an in-memory testing client, not another mail transport.
+Use [SMTP](/docs/mail/smtp/) or [Amazon SES](/docs/mail/ses/) when the application should deliver real messages. Use `FeatherMailTesting` when the application should record and inspect messages in memory.

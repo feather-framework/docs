@@ -84,7 +84,7 @@ The SES driver validates the mail, encodes it as a raw MIME message, base64-enco
 
 ## Local testing with Floci
 
-The Feather CMS development stack uses [Floci](https://floci.io/) for local AWS-compatible services. Floci captures SES messages instead of delivering them to real recipients, so you can test the complete mail flow without AWS credentials or a verified production identity.
+The Feather CMS development stack uses [Floci](https://floci.io/) for local AWS-compatible services. Floci captures SES messages for inspection, so you can test the complete mail flow with local credentials and a locally verified sender identity.
 
 Start Floci from the Feather CMS repository:
 
