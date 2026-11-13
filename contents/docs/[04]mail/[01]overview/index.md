@@ -135,8 +135,7 @@ This keeps use cases focused on business behavior. A login use case can ask `Mai
 
 The currently available mail implementations are:
 
-- [Ephemeral](https://github.com/feather-framework/feather-mail-ephemeral)
 - [SMTP](https://github.com/feather-framework/feather-mail-smtp)
 - [Amazon SES](https://github.com/feather-framework/feather-mail-ses)
 
-Start with the ephemeral driver in tests, then configure SMTP or SES for environments that should send real messages.
+Use `FeatherMailTesting` for in-memory tests, then configure SMTP or SES for environments that should send real messages.

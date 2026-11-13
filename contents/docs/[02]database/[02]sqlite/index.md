@@ -21,7 +21,7 @@ Add the SQLite driver to your `Package.swift` dependencies:
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-database-sqlite",
-    exact: "1.0.0-rc.1"
+    exact: "1.0.0-rc.3"
 ),
 ```
 
@@ -65,8 +65,7 @@ let configuration = SQLiteClient.Configuration(
 
 let client = SQLiteClient(configuration: configuration)
 let database = DatabaseClientSQLite(
-    client: client,
-    logger: logger
+    client: client
 )
 ```
 
@@ -337,7 +336,7 @@ let configuration = SQLiteClient.Configuration(
 )
 
 let client = SQLiteClient(configuration: configuration)
-let database = DatabaseClientSQLite(client: client, logger: logger)
+let database = DatabaseClientSQLite(client: client)
 
 let serviceGroup = ServiceGroup(
     services: [
@@ -374,8 +373,7 @@ let configuration = SQLiteClient.Configuration(
 
 let client = SQLiteClient(configuration: configuration)
 let database = DatabaseClientSQLite(
-    client: client,
-    logger: logger
+    client: client
 )
 
 try await client.run()

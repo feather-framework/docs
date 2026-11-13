@@ -69,8 +69,8 @@ a:hover {
 */
 
 ::selection {
- background: var(--selection-background-color);
- color: var(--selection-text-color);
+ background: var(--selection-color-tint);
+ color: var(--selection-color-text);
  text-shadow: none;
 }
 

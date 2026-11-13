@@ -36,6 +36,7 @@ Then add the product:
 
 ```swift
 import AsyncHTTPClient
+import Foundation
 import FeatherHTTP
 import FeatherHTTPAsyncHTTPClient
 
@@ -49,6 +50,8 @@ let executor = AHCHTTPExecutor(
     requestTimeout: .seconds(30)
 )
 ```
+
+Create the `HTTPClient` once during application startup and manage it with the application's service lifecycle. Reuse the same executor for requests instead of creating a new network client for every operation.
 
 Then run requests through the shared API:
 
@@ -93,6 +96,7 @@ Then add the product:
 ```
 
 ```swift
+import Foundation
 import FeatherHTTP
 import FeatherHTTPURLSession
 

@@ -47,4 +47,6 @@ async function handleFormSubmit(event) {
 }
 
 const exampleForm = document.getElementById("example-form");
-exampleForm.addEventListener("submit", handleFormSubmit);
+if (exampleForm) {
+    exampleForm.addEventListener("submit", handleFormSubmit);
+}

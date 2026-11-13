@@ -260,7 +260,7 @@ For example, the server target can choose:
 - Hummingbird or Vapor for HTTP.
 - PostgreSQL, MySQL, or SQLite for database access.
 - S3 or filesystem storage.
-- SMTP, SES, or an ephemeral mail client.
+- SMTP, SES, or the in-memory `FeatherMailTesting` client.
 - Async HTTP Client or URLSession for outgoing HTTP clients.
 
 Application use cases should depend on protocols and module builders. The `Server` target decides which concrete implementation is used at runtime.

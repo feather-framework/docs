@@ -71,7 +71,7 @@ Feather OpenAPI lets each part be modeled as its own Swift type. This keeps larg
 
 Feather OpenAPI is about building the API specification.
 
-You can then use the generated OpenAPI document with tools such as Swift OpenAPI Generator. In a typical application, generated OpenAPI packages are used by both server and client code. The server registers generated handlers on Hummingbird or Vapor, while clients use the generated `Client` type with a transport such as `URLSessionTransport`.
+You can then use the generated OpenAPI document with tools such as Swift OpenAPI Generator. In a typical application, generated OpenAPI packages are used by both server and client code. The server implements the generated protocols and registers them through a Hummingbird or Vapor transport, while clients use the generated `Client` type with a transport such as `URLSessionTransport`.
 
 That gives the project a clear flow:
 

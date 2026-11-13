@@ -14,4 +14,4 @@ It is not an ORM. You still write SQL, model tables intentionally, and stay clos
 
 Start with the overview if you are new to the database layer. Then choose the driver guide that matches your project, such as SQLite for local development, MySQL for MySQL-compatible servers, or PostgreSQL for production systems that need a powerful relational database.
 
-This section also covers migrations, access-layer patterns, and advanced database topics such as indexes, foreign keys, IDs, dates, and error handling.
+For typed table access, migrations, indexes, foreign keys, and context-level database patterns, continue with the [DBAL](/docs/dbal/) section.

@@ -17,7 +17,7 @@ SMTP is a good fit when your hosting provider, company infrastructure, or email 
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-mail-smtp",
-    exact: "1.0.0-beta.4"
+    exact: "1.0.0-rc.3"
 ),
 ```
 
@@ -35,7 +35,6 @@ Add the product:
 ```swift
 import FeatherMail
 import FeatherMailSMTP
-import Logging
 import NIOSMTP
 ```
 
@@ -54,8 +53,7 @@ let configuration = Configuration(
 let mailClient = MailClientSMTP(
     configuration: configuration,
     mailEncoder: RawMailEncoder(),
-    validator: BasicMailValidator(),
-    logger: Logger(label: "app.mail.smtp")
+    validator: BasicMailValidator()
 )
 ```
 

@@ -12,7 +12,7 @@ Feather Framework is built from focused components. Each component solves a comm
 
 The goal is not to force every project into one large framework. Instead, Feather Framework gives you practical building blocks that can be used together or separately. Your application can depend on stable interfaces, while the concrete implementation can come from the driver, provider, or executor that fits your environment.
 
-This approach keeps application code cleaner. It also makes testing easier, because you can replace real infrastructure with mock or ephemeral implementations when needed.
+This approach keeps application code cleaner. It also makes testing easier, because you can replace real infrastructure with the testing libraries and executors included by the components.
 
 ## Feather Database
 
@@ -26,9 +26,17 @@ Feather Database is designed for modern Swift concurrency, so it fits naturally 
 
 Available database driver implementations include:
 
-- [SQLite](https://github.com/feather-framework/feather-sqlite-database)
-- [PostgreSQL](https://github.com/feather-framework/feather-postgres-database)
-- [MySQL](https://github.com/feather-framework/feather-mysql-database)
+- [SQLite](https://github.com/feather-framework/feather-database-sqlite)
+- [PostgreSQL](https://github.com/feather-framework/feather-database-postgres)
+- [MySQL](https://github.com/feather-framework/feather-database-mysql)
+
+## Feather DBAL
+
+[Feather DBAL](https://github.com/feather-framework/feather-dbal) builds typed table definitions and database access on top of Feather Database and Feather SQL.
+
+Use DBAL when the application needs reusable table schemas, typed insert, update, select, and delete operations, migrations, and a consistent access layer across PostgreSQL, MySQL, and SQLite. DBAL keeps those operations independent from the concrete database driver, while the Database layer owns connections and driver integration.
+
+The [DBAL documentation](/docs/dbal/) explains the layers in order: the SQL builder, typed access layer, migrations, and advanced database patterns.
 
 ## Feather Mail
 
@@ -44,7 +52,8 @@ Available mail implementations include:
 
 - [Amazon SES](https://github.com/feather-framework/feather-mail-ses)
 - [SMTP](https://github.com/feather-framework/feather-mail-smtp)
-- [Ephemeral](https://github.com/feather-framework/feather-mail-ephemeral)
+
+For tests, the core package includes the `FeatherMailTesting` library with the in-memory `TestMailClient` and `TestMailbox` types.
 
 ## Feather Storage
 
@@ -60,7 +69,8 @@ Available storage driver implementations include:
 
 - [Filesystem](https://github.com/feather-framework/feather-storage-fs)
 - [S3](https://github.com/feather-framework/feather-storage-s3)
-- [Ephemeral](https://github.com/feather-framework/feather-storage-ephemeral)
+
+For tests, the core package includes the `FeatherStorageTesting` library with the in-memory `TestStorageClient` and `TestStorageState` types.
 
 ## Feather HTTP
 

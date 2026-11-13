@@ -1,5 +1,5 @@
 a:link {
-    color: var(--link-color);
+    color: var(--link-color-default);
 }
 a:visited {
     color: var(--link-color-visited);
@@ -24,8 +24,9 @@ html {
     box-sizing: inherit;
 }
 body {
-    background: var(--background-color);
-    color: var(--text-color);
+    background: var(--material-color-primary-tint);
+    color: var(--material-color-secondary-text);
+    font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
     font-size: 17px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -63,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 hr {
     border: none;
-    border-bottom: 1px solid var(--background-color-2);
+    border-bottom: 1px solid var(--material-color-secondary-border);
 }
 hr.spacer {
     border: none;
@@ -72,39 +73,55 @@ p {
     font-size: 1.0625rem;
     line-height: 1.75;
     margin-top: 0;
-    color: var(--text-color-2);
+    color: var(--material-color-secondary-text);
     margin-bottom: 1.25rem;
 }
 pre {
     font-size: 0.95rem;
     line-height: 1.65;
-    background: var(--background-color-1);
+    background: var(--material-color-quaternary-tint);
     margin: 1.5rem auto;
-    border: 1px solid var(--background-color-2);
+    border: 1px solid var(--material-color-secondary-border);
     border-radius: 8px;
     margin-bottom: 1.75rem;
-    padding: 1rem;
+    padding: 0.7rem;
     max-width: 100%;
+    overflow: hidden;
 }
 pre code {
     text-shadow: none;
-    font-family: monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
     display: block;
+    padding: 0;
+    background: transparent;
     overflow-x: auto;
     white-space: pre;
     -webkit-overflow-scrolling: touch;
 }
+
+pre code.hljs {
+    padding: 0;
+    background: var(--material-color-quaternary-tint);
+}
+
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+    pre,
+    pre code.hljs {
+        background: var(--material-color-secondary-tint);
+    }
+}
+
 pre code a {
-    border-bottom: 1px dotted var(--text-color);
+    border-bottom: 1px dotted var(--material-color-secondary-text);
 }
 li {
     font-size: 1.0625rem;
     line-height: 1.65;
-    color: var(--text-color-2);
+    color: var(--material-color-secondary-text);
     margin-bottom: 0.65rem;
 }
 p code, li code {
-    font-family: monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
     font-weight: bold;
 }
 p code a, li code a {
@@ -114,7 +131,7 @@ li p {
     margin: 0;
 }
 p code a, li code a {
-    border-bottom: 1px dotted var(--text-color);
+    border-bottom: 1px dotted var(--material-color-secondary-text);
 }
 section {
     margin-bottom: clamp(2rem, 5vw, 3.5rem);

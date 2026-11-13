@@ -34,11 +34,11 @@ Add the URLSession transport package. If you want to use client middleware, also
 ),
 .package(
     url: "https://github.com/apple/swift-openapi-runtime",
-    from: "1.0.0"
+    from: "1.13.2"
 ),
 .package(
     url: "https://github.com/apple/swift-http-types",
-    from: "1.0.0"
+    from: "1.7.0"
 ),
 ```
 

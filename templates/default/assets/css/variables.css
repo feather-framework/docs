@@ -1,32 +1,32 @@
 :root {
     color-scheme: light;
 
-    --link-color: #2563eb;
+    --link-color-default: #2563eb;
     --link-color-visited: #7c3aed;
     --link-color-hover: #1d4ed8;
     --link-color-active: #1e40af;
     
-    --background-color: #ffffff;
-    --background-color-1: #f8fafc;
-    --background-color-2: #e5e7eb;
-    --background-color-3: #d1d5db;
-    --background-color-4: #9ca3af;
+    --material-color-primary-tint: #ffffff;
+    --material-color-secondary-tint: #f8fafc;
+    --material-color-secondary-border: #edf0f4;
+    --material-color-tertiary-border: #d1d5db;
+    --material-color-quaternary-border: #9ca3af;
     
-    --primary-text-color: #111827;
-    --primary-background-color: #eff6ff;
+    --material-color-primary-text: #111827;
+    --material-color-primary-hover: #eff6ff;
     
-    --text-color: #374151;
-    --text-color-1: #111827;
-    --text-color-2: #1f2937;
-    --text-color-3: #6b7280;
+    --material-color-secondary-text: #374151;
+    --material-color-primary-text: #111827;
+    --material-color-secondary-text: #1f2937;
+    --material-color-tertiary-text: #6b7280;
 
-    --selection-background-color: #bfdbfe;
-    --selection-text-color: #111827;
+    --selection-color-tint: #bfdbfe;
+    --selection-color-text: #111827;
 
-    --button-background-color: #2563eb;
-    --button-background-color-hover: #1d4ed8;
-    --button-text-color: #ffffff;
-    --button-border-color: #2563eb;
+    --accent-color-primary-tint: #2563eb;
+    --accent-color-primary-hover: #1d4ed8;
+    --accent-color-primary-text: #ffffff;
+    --accent-color-primary-border: #2563eb;
     --button-border-width: 1px;
     --button-border-radius: 6px;
     --button-shadow: 0 1px 2px rgba(17, 24, 39, 0.08);
@@ -34,12 +34,12 @@
 
     --white-color: #ffffff;
     --black-color: #000000;
-    --blue-color: #006fff;
-    --green-color: #2ec04f;
+    --color-blue-foreground: #006fff;
+    --color-green-foreground: #2ec04f;
     --indigo-color: #4e4cd0;
     --orange-color: #ff8a00;
     --pink-color: #ff284b;
-    --purple-color: #a648d9;
+    --color-purple-foreground: #a648d9;
     --red-color: #ff342a;
     --teal-color: #50c1f9;
     --yellow-color: #ffc500;
@@ -50,47 +50,110 @@
     :root {
         color-scheme: dark;
 
-        --link-color: #60a5fa;
+        --link-color-default: #60a5fa;
         --link-color-visited: #c084fc;
         --link-color-hover: #93c5fd;
         --link-color-active: #bfdbfe;
 
-        --text-color: #d1d5db;
-        --text-color-1: #f9fafb;
-        --text-color-2: #e5e7eb;
-        --text-color-3: #9ca3af;
+        --material-color-secondary-text: #d1d5db;
+        --material-color-primary-text: #f9fafb;
+        --material-color-secondary-text: #e5e7eb;
+        --material-color-tertiary-text: #9ca3af;
 
-        --selection-background-color: #1d4ed8;
-        --selection-text-color: #ffffff;
+        --selection-color-tint: #1d4ed8;
+        --selection-color-text: #ffffff;
 
-        --background-color: #111827;
-        --background-color-1: #1f2937;
-        --background-color-2: #374151;
-        --background-color-3: #4b5563;
-        --background-color-4: #6b7280;
+        --material-color-primary-tint: #111827;
+        --material-color-secondary-tint: #1f2937;
+        --material-color-secondary-border: #2f3036;
+        --material-color-tertiary-border: #4b5563;
+        --material-color-quaternary-border: #6b7280;
 
-        --primary-text-color: #f9fafb;
-        --primary-background-color: #1f2937;
+        --material-color-primary-text: #f9fafb;
+        --material-color-primary-hover: #1f2937;
 
-        --button-background-color: #2563eb;
-        --button-background-color-hover: #1d4ed8;
-        --button-text-color: #ffffff;
-        --button-border-color: #3b82f6;
+        --accent-color-primary-tint: #2563eb;
+        --accent-color-primary-hover: #1d4ed8;
+        --accent-color-primary-text: #ffffff;
+        --accent-color-primary-border: #3b82f6;
         --button-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
         --button-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.34);
         
         --white-color: #ffffff;
         --black-color: #000000;
-        --blue-color: #0d79ff;
-        --green-color: #2acb4e;
+        --color-blue-foreground: #0d79ff;
+        --color-green-foreground: #2acb4e;
         --indigo-color: #5352e2;
         --orange-color: #ff950d;
         --pink-color: #ff3054;
-        --purple-color: #b750f0;
+        --color-purple-foreground: #b750f0;
         --red-color: #ff3c33;
         --teal-color: #59ccff;
         --yellow-color: #ffd00d;
         --brown-color: #a2835d;
         --gray-color: #8d8d92;
+    }
+}
+
+/* Feather CMS design tokens mapped to the documentation theme. */
+:root {
+    --link-color-default: #8647b2;
+    --link-color-visited: #8647b2;
+    --link-color-hover: #664ca6;
+    --link-color-active: #3f2073;
+    --material-color-primary-tint: #ffffff;
+    --material-color-secondary-tint: #f8fafc;
+    --material-color-secondary-border: #edf0f4;
+    --material-color-tertiary-tint: #eef0f3;
+    --material-color-tertiary-border: #d9dce1;
+    --material-color-quaternary-tint: #e6e8eb;
+    --material-color-quaternary-border: #d9dce1;
+    --material-color-primary-text: #000000;
+    --material-color-primary-hover: #f5f6f8;
+    --material-color-secondary-text: #111827;
+    --material-color-tertiary-text: #374151;
+    --selection-color-tint: #6536ab;
+    --selection-color-text: #ffffff;
+    --accent-color-primary-tint: #6536ab;
+    --accent-color-primary-hover: #4b2780;
+    --accent-color-primary-text: #ffffff;
+    --accent-color-primary-border: #4b2780;
+    --pink-color: #bf3b87;
+    --color-blue-foreground: #2563eb;
+    --color-purple-foreground: #9333ea;
+    --red-color: #d14343;
+    --color-green-foreground: #16a34a;
+    --orange-color: #ea580c;
+    --yellow-color: #ca8a04;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --link-color-default: #b06cff;
+        --link-color-visited: #ef5eb0;
+        --link-color-hover: #c38cff;
+        --link-color-active: #ff86aa;
+        --material-color-primary-tint: #19191b;
+        --material-color-secondary-tint: #202023;
+        --material-color-secondary-border: #303036;
+        --material-color-tertiary-tint: #28282b;
+        --material-color-tertiary-border: #38383e;
+        --material-color-quaternary-tint: #111113;
+        --material-color-quaternary-border: #2b2b2e;
+        --material-color-primary-text: #f7fbff;
+        --material-color-primary-hover: #202023;
+        --material-color-secondary-text: #e9edf2;
+        --material-color-tertiary-text: #e0dde5;
+        --selection-color-tint: #7a43d1;
+        --accent-color-primary-tint: #7a43d1;
+        --accent-color-primary-hover: #8c4ef0;
+        --accent-color-primary-border: #733fc2;
+        --pink-color: #d6549b;
+        --color-blue-foreground: #64b5ff;
+        --color-purple-foreground: #d08cff;
+        --red-color: #ff6961;
+        --color-green-foreground: #63e68a;
+        --orange-color: #ffb340;
+        --yellow-color: #ffd60a;
     }
 }
