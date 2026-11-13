@@ -36,6 +36,7 @@ Then add the product:
 
 ```swift
 import AsyncHTTPClient
+import Foundation
 import FeatherHTTP
 import FeatherHTTPAsyncHTTPClient
 
@@ -95,6 +96,7 @@ Then add the product:
 ```
 
 ```swift
+import Foundation
 import FeatherHTTP
 import FeatherHTTPURLSession
 

@@ -18,6 +18,36 @@ This makes the boundary clear:
 - **Feather Database** provides the common connection and execution APIs.
 - **Feather DBAL** adds typed tables, access operations, migrations, and row decoding.
 
+## Installation
+
+Add the core SQL package and the dialect you need. This example uses PostgreSQL:
+
+```swift
+.package(
+    url: "https://github.com/feather-framework/feather-sql",
+    exact: "1.0.0-alpha.1"
+),
+.package(
+    url: "https://github.com/feather-framework/feather-sql-postgres",
+    exact: "1.0.0-alpha.1"
+),
+```
+
+Add the matching products to your target:
+
+```swift
+.product(
+    name: "FeatherSQL",
+    package: "feather-sql"
+),
+.product(
+    name: "FeatherSQLPostgres",
+    package: "feather-sql-postgres"
+),
+```
+
+For MySQL, use `feather-sql-mysql` at `1.0.0-alpha.3` and the `FeatherSQLMySQL` product. For SQLite, use `feather-sql-sqlite` at `1.0.0-alpha.1` and the `FeatherSQLSQLite` product.
+
 ## Choose a dialect
 
 Create an `SQLBuilder` with the dialect supplied by the database driver. The same builder chain can then produce PostgreSQL, MySQL, or SQLite syntax:
