@@ -10,7 +10,7 @@ order: 3
 
 [Feather Storage S3](https://github.com/feather-framework/feather-storage-s3) is the S3-compatible driver for Feather Storage.
 
-Use it when files should live in Amazon S3 or an S3-compatible object storage provider. The Feather CMS development stack uses [Floci](https://floci.io/) as its local AWS-compatible service instead of a separate S3 emulator.
+Use it when files should live in Amazon S3 or an S3-compatible object storage provider. The Feather CMS development stack uses [Floci](https://floci.io/) as its local AWS-compatible S3 service.
 
 ## Installation
 

@@ -10,7 +10,7 @@ order: 4
 
 Swift has two well-known server frameworks that are often considered when starting a backend project: Vapor and Hummingbird. Both are strong choices, both are valuable parts of the Swift server ecosystem, and both can be used with Feather Framework.
 
-The important thing to understand is that Feather Framework is not trying to replace either of them. Vapor and Hummingbird handle the HTTP server layer, although they also provide web-framework tools such as Fluent ORM in the Vapor ecosystem or Hummingbird Auth in the Hummingbird ecosystem. 
+The important thing to understand is how the responsibilities are divided. Vapor and Hummingbird handle the HTTP server layer, although they also provide web-framework tools such as Fluent ORM in the Vapor ecosystem or Hummingbird Auth in the Hummingbird ecosystem.
 
 Feather Framework sits at a different abstraction level and helps organize the application beyond the core web framework concerns.
 
@@ -26,9 +26,9 @@ Vapor 4 has been an important framework for server-side Swift. It helped many de
 
 At the same time, Vapor 4 provides a broad, integrated framework experience. That is useful for many teams, especially when they want a complete ecosystem with well-known conventions. For projects that prefer composing smaller independent parts, a lighter and more modular HTTP layer can be a better fit.
 
-Vapor 5 is already a work in progress, and it is a very important step for the Swift server ecosystem. The Vapor team has described the next generation of Vapor as a modern foundation built around structured concurrency, newer Swift ecosystem packages, updated WebSocket and multipart APIs, and a more modern backend architecture.
+Vapor 5 is in beta and its APIs are still evolving. It is built around structured concurrency, newer Swift ecosystem packages, updated WebSocket and multipart APIs, and a more modern backend architecture.
 
-In other words, Vapor 5 is moving toward an ultra-modern HTTP server and web framework for Swift. We are excited about that direction.
+Vapor 5 is a significant redesign of the HTTP server and web framework, so check its current release documentation before adopting it for a new project.
 
 ## Hummingbird
 
@@ -73,6 +73,6 @@ Feather Framework follows that same idea for Swift. It is not trying to be the H
 
 - Use **Hummingbird 2** for new Feather Framework projects when you want a lightweight, modular HTTP server that matches Feather Framework's design.
 - Use **Vapor 4** when your project already depends on Vapor or your team prefers Vapor's ecosystem and developer experience.
-- Keep an eye on **Vapor 5**, because it is moving toward a very modern direction and may become an excellent fit for Feather Framework as it matures.
+- Evaluate **Vapor 5** against its current release documentation if you want its newer concurrency and HTTP APIs.
 
 Feather Framework is designed to work with the Swift server ecosystem. The goal is to let the HTTP framework do what it does best, while Feather Framework helps keep the rest of the backend clean, modular, and professional.
