@@ -86,6 +86,7 @@ pre {
     margin-bottom: 1.75rem;
     padding: 1rem;
     max-width: 100%;
+    overflow: hidden;
 }
 pre code {
     text-shadow: none;

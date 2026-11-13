@@ -1,14 +1,26 @@
-<aside>
-    <ul>
-    {{#context.categories}}
-        <li class="category">
-            <a href="{{permalink}}">{{title}}</a>
-            <ul>
-            {{#guides}}
-                <li><a href="{{permalink}}">{{title}}</a></li>
-            {{/guides}}
-            </ul>
-        </li>
-    {{/context.categories}}
-    </ul>
-</aside>
+<details class="docs-nav">
+    <summary>Browse documentation</summary>
+    <aside>
+        <ul>
+        {{#context.categories}}
+            <li class="category">
+                <a href="{{permalink}}">{{title}}</a>
+                <ul>
+                {{#guides}}
+                    <li><a href="{{permalink}}">{{title}}</a></li>
+                {{/guides}}
+                </ul>
+            </li>
+        {{/context.categories}}
+        </ul>
+    </aside>
+</details>
+<script>
+    (() => {
+        const nav = document.querySelector('.docs-nav');
+        const desktop = window.matchMedia('(min-width: 600px)');
+        const syncNav = () => { nav.open = desktop.matches; };
+        syncNav();
+        desktop.addEventListener('change', syncNav);
+    })();
+</script>
