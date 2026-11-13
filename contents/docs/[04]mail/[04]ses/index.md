@@ -17,7 +17,7 @@ SES is a strong choice for production transactional email on AWS. It supports hi
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-mail-ses",
-    exact: "1.0.0-beta.5"
+    exact: "1.0.0-rc.4"
 ),
 ```
 
@@ -35,7 +35,6 @@ Add the product:
 ```swift
 import FeatherMail
 import FeatherMailSES
-import FeatherGeneratedSES
 import Logging
 import SotoCore
 ```
@@ -47,18 +46,22 @@ Create an AWS client and an SES v2 client, then pass it to `MailClientSES`:
 ```swift
 let awsClient = AWSClient(
     credentialProvider: .default,
-    httpClientProvider: .createNew
+    logger: Logger.current
 )
 
 let ses = SESv2(
     client: awsClient,
-    region: .useast1
+    region: .init(rawValue: "eu-central-1"),
+    partition: .aws,
+    endpoint: nil,
+    timeout: nil,
+    byteBufferAllocator: .init(),
+    options: []
 )
 
 let mailClient = MailClientSES(
     ses: ses,
-    encoder: RawMailEncoder(),
-    logger: Logger(label: "app.mail.ses")
+    encoder: RawMailEncoder()
 )
 ```
 
@@ -78,6 +81,28 @@ try await mailClient.send(mail)
 ```
 
 The SES driver validates the mail, encodes it as a raw MIME message, base64-encodes the payload, and sends it through the SES v2 API.
+
+## Local testing with Floci
+
+The Feather CMS development stack uses [Floci](https://floci.io/) for local AWS-compatible services. Floci captures SES messages instead of delivering them to real recipients, so you can test the complete mail flow without AWS credentials or a verified production identity.
+
+Start Floci from the Feather CMS repository:
+
+```sh
+docker compose up floci
+```
+
+For a host process, point the SES client at the published Floci port:
+
+```env
+AWS_ACCESS_KEY_ID=test
+AWS_SECRET_ACCESS_KEY=test
+SES_REGION=eu-central-1
+SES_ENDPOINT=http://127.0.0.1:4566
+SES_FROM_EMAIL=no-reply@feather.local
+```
+
+When the application runs inside the Compose network, use `SES_ENDPOINT=http://floci:4566` instead. Floci verifies the default sender identity on startup and exposes captured messages at `http://127.0.0.1:4566/_aws/ses` from the host.
 
 ## Attachment size
 

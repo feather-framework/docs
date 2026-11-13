@@ -2,7 +2,7 @@
 type: "category"
 title: "OpenAPI"
 description: "Learn how Feather OpenAPI helps describe API contracts and connect generated Swift server and client code."
-order: 7
+order: 8
 ---
 
 # OpenAPI

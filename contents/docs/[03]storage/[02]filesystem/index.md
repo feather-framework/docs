@@ -19,7 +19,7 @@ Add the filesystem driver to your `Package.swift` dependencies:
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-storage-fs",
-    exact: "1.0.0-beta.1"
+    exact: "1.0.0-rc.3"
 ),
 ```
 

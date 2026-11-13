@@ -22,8 +22,9 @@ If you are new to Feather Framework, begin with [Getting Started](/docs/getting-
 If you already know the basic idea, jump into the component guides:
 
 - [Database](/docs/database/) explains the SQL-first database layer, drivers, migrations, access-layer patterns, and advanced database practices.
+- [DBAL](/docs/dbal/) explains the typed access layer, database platforms, and driver-specific integrations for PostgreSQL, MySQL, and SQLite.
 - [Storage](/docs/storage/) explains the common storage API and drivers for local files, S3-compatible services, and in-memory testing.
-- [Mail](/docs/mail/) explains how to send email through a common interface with ephemeral, SMTP, and SES drivers.
+- [Mail](/docs/mail/) explains how to send email through a common interface with in-memory testing, SMTP, and SES implementations.
 - [HTTP](/docs/http/) explains HTTP clients, request testing, and server setup with Hummingbird or Vapor.
 - [OpenAPI](/docs/openapi/) explains how to describe API contracts, integrate generated server code, and use generated clients.
 ## How to read these docs

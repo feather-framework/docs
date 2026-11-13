@@ -1,0 +1,3 @@
+type: redirect
+to: "docs/dbal/migrations/"
+code: 301

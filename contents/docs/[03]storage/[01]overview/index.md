@@ -155,7 +155,7 @@ try await storage.abort(
 )
 ```
 
-The filesystem, S3, and ephemeral drivers all expose this same shape, even though the internal implementation is different.
+The filesystem and S3 drivers expose this same shape, while `TestStorageClient` provides the same API entirely in memory for tests.
 
 ## Recommended application structure
 
@@ -194,6 +194,5 @@ The currently available storage implementations are:
 
 - [Filesystem](https://github.com/feather-framework/feather-storage-fs)
 - [S3](https://github.com/feather-framework/feather-storage-s3)
-- [Ephemeral](https://github.com/feather-framework/feather-storage-ephemeral)
 
-Use the filesystem driver for local disk storage, the S3 driver for S3-compatible object storage, and the ephemeral driver for tests or temporary local workflows.
+Use the filesystem driver for local disk storage, the S3 driver for S3-compatible object storage, and `FeatherStorageTesting` for in-memory tests or previews.

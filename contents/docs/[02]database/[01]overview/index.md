@@ -72,7 +72,7 @@ Feather Database supports result streaming, which lets your application process 
 
 ## Connection pooling
 
-Opening a new database connection for every query is expensive. Feather Database includes built-in connection pooling so connections can be reused safely.
+Opening a new database connection for every query is expensive. The concrete database drivers can provide connection pooling, so connections can be reused safely while the common Feather Database API stays the same.
 
 A connection pool manages a set of active database connections for your application. When a query needs to run, the pool provides an available connection. When the query is finished, the connection can be returned to the pool and reused later.
 

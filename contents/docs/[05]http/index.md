@@ -2,7 +2,7 @@
 type: "category"
 title: "HTTP"
 description: "Learn how Feather HTTP supports real HTTP clients, route testing, and server setup with Hummingbird or Vapor."
-order: 6
+order: 7
 ---
 
 # HTTP

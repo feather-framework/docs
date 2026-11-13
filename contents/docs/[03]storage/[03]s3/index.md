@@ -10,7 +10,7 @@ order: 3
 
 [Feather Storage S3](https://github.com/feather-framework/feather-storage-s3) is the S3-compatible driver for Feather Storage.
 
-Use it when files should live in Amazon S3 or an S3-compatible service such as MinIO, Cloudflare R2, DigitalOcean Spaces, or another object storage provider.
+Use it when files should live in Amazon S3 or an S3-compatible object storage provider. The Feather CMS development stack uses [Floci](https://floci.io/) as its local AWS-compatible service instead of a separate S3 emulator.
 
 ## Installation
 
@@ -19,7 +19,7 @@ Add the S3 driver to your `Package.swift` dependencies:
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-storage-s3",
-    exact: "1.0.0-beta.2"
+    exact: "1.0.0-rc.3"
 ),
 ```
 
@@ -45,31 +45,23 @@ import SotoCore
 
 ## Create an S3 client
 
-Create a configured Soto `S3` client, then wrap it with `StorageClientS3`:
+Create a configured AWS client, then wrap it with the current `StorageClientS3` initializer:
 
 ```swift
 let awsClient = AWSClient(
-    credentialProvider: .static(
-        accessKeyId: "minioadmin",
-        secretAccessKey: "minioadmin"
-    ),
-    httpClientProvider: .createNew
-)
-
-let s3 = S3(
-    client: awsClient,
-    region: .useast1,
-    endpoint: "http://127.0.0.1:9000"
+    credentialProvider: .default,
+    logger: Logger.current
 )
 
 let storage = StorageClientS3(
-    s3: s3,
-    bucket: "app-storage",
-    logger: Logger(label: "app.storage.s3")
+    awsClient: awsClient,
+    region: "us-east-1",
+    endpoint: "http://127.0.0.1:4566",
+    bucket: "feather-cms-app"
 )
 ```
 
-In production, load credentials and endpoint values from your environment or secret manager. Do not hard-code real credentials.
+For local development, Floci is started by the Feather CMS Docker Compose stack and exposes its AWS-compatible APIs on port `4566`. The application uses the AWS default credential provider, with local `test` credentials supplied by the Compose stack or `scripts/run-local.sh`. In production, leave the endpoint empty for AWS S3 and load credentials from the standard provider chain or a secret manager.
 
 ## Upload and download
 
@@ -166,30 +158,37 @@ try await storage.abort(
 
 This helps avoid leaving unfinished multipart upload state in your bucket.
 
-## Local testing with MinIO
+## Local testing with Floci
 
-For local S3-compatible testing, MinIO is a practical option.
+The Feather CMS repository integrates Floci into its root Docker Compose stack. Floci provides the local S3-compatible API, creates the application bucket during startup, and also supplies the local SES and CloudFront-compatible media services.
 
 ```yaml
 services:
-  minio:
-    image: minio/minio:latest
-    command: server /data --console-address ":9001"
+  floci:
+    image: floci/floci:latest-compat
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "${FLOCI_PUBLISHED_PORT:-4566}:4566"
     environment:
-      MINIO_ROOT_USER: minioadmin
-      MINIO_ROOT_PASSWORD: minioadmin
+      FLOCI_HOSTNAME: floci
+      FLOCI_STORAGE_MODE: persistent
+      FLOCI_STORAGE_PERSISTENT_PATH: /app/data
+      FLOCI_DEFAULT_REGION: us-east-1
+      STORAGE_S3_BUCKET: feather-cms-app
+      STORAGE_S3_REGION: us-east-1
+    volumes:
+      - floci-data:/app/data
+
+volumes:
+  floci-data:
 ```
 
 Start it with:
 
 ```sh
-docker compose up minio
+docker compose up floci
 ```
 
-Then create a bucket named `app-storage` through the MinIO console at `http://127.0.0.1:9001`, or create it from your test setup.
+The local application connects to `http://127.0.0.1:4566` with `STORAGE_S3_REGION=us-east-1` and `STORAGE_S3_BUCKET=feather-cms-app`. The Feather CMS init hook creates the bucket automatically, so no separate web console step is required. When running the application inside Compose, use `http://floci:4566` instead of `127.0.0.1`.
 
 ## Security notes
 

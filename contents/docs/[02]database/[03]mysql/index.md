@@ -21,7 +21,7 @@ Add the MySQL driver to your `Package.swift` dependencies:
 ```swift
 .package(
     url: "https://github.com/feather-framework/feather-database-mysql",
-    exact: "1.0.0-rc.1"
+    exact: "1.0.0-rc.3"
 ),
 ```
 
@@ -123,8 +123,7 @@ Finally, wrap it in a Feather Database client:
 
 ```swift
 let database = DatabaseClientMySQL(
-    connection: connection,
-    logger: logger
+    connection: connection
 )
 ```
 
@@ -438,8 +437,7 @@ let connection = try await MySQLConnection.connect(
 .get()
 
 let database = DatabaseClientMySQL(
-    connection: connection,
-    logger: logger
+    connection: connection
 )
 
 do {
