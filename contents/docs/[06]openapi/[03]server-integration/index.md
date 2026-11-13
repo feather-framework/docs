@@ -38,6 +38,36 @@ For example, an application server can depend on generated OpenAPI packages:
 
 Those packages provide API protocols and generated request and response types.
 
+For a Hummingbird server, add the OpenAPI runtime and Hummingbird transport:
+
+```swift
+.package(
+    url: "https://github.com/apple/swift-openapi-runtime",
+    from: "1.13.2"
+),
+.package(
+    url: "https://github.com/hummingbird-project/swift-openapi-hummingbird",
+    from: "2.0.1"
+),
+```
+
+Then add the generated API package, runtime, and transport products to the server target:
+
+```swift
+.product(
+    name: "ExampleAppOpenAPI",
+    package: "example-openapi"
+),
+.product(
+    name: "OpenAPIRuntime",
+    package: "swift-openapi-runtime"
+),
+.product(
+    name: "OpenAPIHummingbird",
+    package: "swift-openapi-hummingbird"
+),
+```
+
 The server implementation can then conform to the generated protocol:
 
 ```swift
