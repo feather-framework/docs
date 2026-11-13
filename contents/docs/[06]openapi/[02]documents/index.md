@@ -46,6 +46,8 @@ The document model comes from `FeatherOpenAPI`:
 
 Feather applications can also use the reusable generator helpers from the `FeatherOpenAPIGenerator` product in `feather-core`. Those helpers provide patterns such as bearer-protected operations, standard HTTP error responses, delete operations, and search request/response schemas.
 
+`FeatherOpenAPIGenerator` comes from the `feather-core` package used by Feather CMS, not from `FeatherOpenAPI`. The YAML-writing generator target also declares [Yams](https://github.com/jpsim/Yams) as a direct dependency.
+
 ## Create a namespace for the document types
 
 Use a namespace enum to group the feature's OpenAPI types:
@@ -97,6 +99,34 @@ extension Variable.Schemas {
     struct Search: StringSchemaRepresentable {
         var openAPIIdentifier: String { "SystemVariableSearch" }
         var example: String? { "mail" }
+    }
+
+    struct Limit: IntSchemaRepresentable {
+        var openAPIIdentifier: String { "SystemVariableListLimit" }
+        var description: String? {
+            "Maximum number of results. Defaults to 20; values are clamped to 1-100."
+        }
+        var defaultValue: Int? { 20 }
+        var example: Int? { 20 }
+    }
+
+    struct UpdateMask: StringSchemaRepresentable {
+        var openAPIIdentifier: String { "SystemVariableUpdateMask" }
+        var example: String? { "key,value,name,notes" }
+    }
+}
+
+extension Variable.Query {
+    enum Schemas {}
+}
+
+extension Variable.Query.Schemas {
+    struct Filter: ArraySchemaRepresentable {
+        var openAPIIdentifier: String { "SystemVariableIDsFilter" }
+        var items: (any SchemaRepresentable)? {
+            Variable.Schemas.ID()
+        }
+        var required: Bool { false }
     }
 }
 ```
@@ -219,6 +249,37 @@ extension Variable.Parameters {
             Variable.Schemas.Search().reference()
         }
     }
+
+    struct IDs: QueryParameterRepresentable {
+        var name: String { "ids" }
+        var required: Bool { false }
+        var description: String? { "Filter by one or more variable IDs" }
+        var schema: any OpenAPISchemaRepresentable {
+            Variable.Query.Schemas.Filter().reference()
+        }
+    }
+
+    struct Limit: QueryParameterRepresentable {
+        var name: String { "limit" }
+        var required: Bool { false }
+        var description: String? {
+            "Defaults to 20; values are clamped to 1-100"
+        }
+        var schema: any OpenAPISchemaRepresentable {
+            Variable.Schemas.Limit().reference()
+        }
+    }
+
+    struct UpdateMask: QueryParameterRepresentable {
+        var name: String { "updateMask" }
+        var required: Bool { true }
+        var description: String? {
+            "Comma-separated list of fields to update"
+        }
+        var schema: any OpenAPISchemaRepresentable {
+            Variable.Schemas.UpdateMask().reference()
+        }
+    }
 }
 ```
 
@@ -244,9 +305,14 @@ import FeatherOpenAPI
 import FeatherOpenAPIGenerator
 
 extension Variable {
+    enum List {}
     enum Get {}
     enum Post {}
+    enum Delete {}
+    enum Query {}
     enum ID {}
+    enum Put {}
+    enum Patch {}
 
     public protocol Operation: OperationRepresentable {}
     public protocol IdentifiableOperation: Operation {}
@@ -434,9 +500,18 @@ struct PathCollection: PathCollectionRepresentable {
 The CMS generator serializes the document to YAML and writes multiple OpenAPI versions for downstream code generation:
 
 ```swift
+import Foundation
+import Yams
+
 let document = Document()
 let openAPIDocument = document.openAPIDocument()
 let encoder = YAMLEncoder()
+let output = URL(fileURLWithPath: "openapi", isDirectory: true)
+
+try FileManager.default.createDirectory(
+    at: output,
+    withIntermediateDirectories: true
+)
 
 for version in ["", "@v3_1_0", "@v3_2_0"] {
     let value: String
@@ -486,7 +561,7 @@ swift-openapi-generator generate \
     openapi/system-admin.yaml
 ```
 
-The generated package is transport-independent. On the server, connect the generated server protocols to a transport such as [OpenAPIHummingbird](https://github.com/apple/swift-openapi-hummingbird) or [OpenAPIVapor](https://github.com/apple/swift-openapi-vapor). On the client, use [OpenAPIAsyncHTTPClient](https://github.com/swift-server/swift-openapi-async-http-client) for server-side Swift, or [OpenAPIURLSession](https://github.com/apple/swift-openapi-urlsession) for iOS, macOS, and other Foundation-based applications.
+The generated package is transport-independent. On the server, connect the generated server protocols to a transport such as [OpenAPIHummingbird](https://github.com/hummingbird-project/swift-openapi-hummingbird) or [OpenAPIVapor](https://github.com/vapor/swift-openapi-vapor). On the client, use [OpenAPIAsyncHTTPClient](https://github.com/swift-server/swift-openapi-async-http-client) for server-side Swift, or [OpenAPIURLSession](https://github.com/apple/swift-openapi-urlsession) for iOS, macOS, and other Foundation-based applications.
 
 This separates the API contract from the HTTP transport: the generated types, client methods, and server operations stay the same while the application chooses the transport required by its runtime.
 
