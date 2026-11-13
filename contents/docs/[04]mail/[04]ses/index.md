@@ -65,6 +65,8 @@ let mailClient = MailClientSES(
 )
 ```
 
+Create the AWS client, SES client, and mail client once during application startup. Keep the `AWSClient` in the application's service lifecycle so its networking resources are shut down when the application stops.
+
 In production, prefer platform-managed credentials where possible. On AWS, this usually means IAM roles instead of hard-coded access keys.
 
 ## Send a message

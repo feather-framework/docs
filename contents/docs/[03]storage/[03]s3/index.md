@@ -61,6 +61,8 @@ let storage = StorageClientS3(
 )
 ```
 
+Create the AWS client and storage client once during application startup. Keep the `AWSClient` in the application's service lifecycle so its networking resources are started and shut down together with the application.
+
 For local development, Floci is started by the Feather CMS Docker Compose stack and exposes its AWS-compatible APIs on port `4566`. The application uses the AWS default credential provider, with local `test` credentials supplied by the Compose stack or `scripts/run-local.sh`. In production, leave the endpoint empty for AWS S3 and load credentials from the standard provider chain or a secret manager.
 
 ## Upload and download

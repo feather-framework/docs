@@ -50,6 +50,8 @@ let executor = AHCHTTPExecutor(
 )
 ```
 
+Create the `HTTPClient` once during application startup and manage it with the application's service lifecycle. Reuse the same executor for requests instead of creating a new network client for every operation.
+
 Then run requests through the shared API:
 
 ```swift
