@@ -29,7 +29,7 @@ DBAL is the Database Access Layer for Feather applications. Its documentation is
 1. **SQL** covers the lower-level, SQLKit-derived query builder, parameter bindings, and dialect-aware SQL generation.
 2. **Access Layer** covers typed table definitions, reusable database operations, and row decoding through `DatabaseAccessLayer`.
 3. **Migrations** covers schema creation, schema changes, indexes, and seed data.
-4. **Advanced** covers production database concerns such as constraints, error handling, identifiers, and timestamps.
+4. **Advanced** covers production database concerns such as constraints, indexes, identifiers, timestamps, and foreign keys.
 
 The selected database platform and connection remain infrastructure details. They supply the SQL dialect and execute the generated queries, while the application-facing table and access code can remain the same when the infrastructure changes from PostgreSQL to MySQL or SQLite.
 
