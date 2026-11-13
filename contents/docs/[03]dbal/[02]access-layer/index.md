@@ -1,7 +1,7 @@
 ---
 category: "dbal"
 title: "Access Layer"
-description: "Build typed table access with DatabaseAccessLayer using the System Module Variable model as a complete example."
+description: "Build typed table access with DatabaseAccessLayer using the System Module Variable feature as a complete example."
 order: 3
 ---
 
@@ -10,7 +10,7 @@ order: 3
 
 The Database Access Layer is the application-facing part of DBAL. It describes tables with Swift types, turns typed operations into SQL, and decodes database rows into values that repositories and use cases can consume.
 
-The System Module `Variable` model in the [Feather CMS example application](https://github.com/feathercms/feather) shows the complete pattern. Its infrastructure code keeps the table, row payloads, queries, repository, and migration close together while the rest of the application depends on interfaces.
+The System Module `Variable` feature in the [Feather CMS example application](https://github.com/feathercms/feather) shows the complete pattern. Its infrastructure code keeps the table, row payloads, queries, repository, and migration close together while the rest of the application depends on interfaces.
 
 ## Define the table
 
@@ -39,7 +39,7 @@ extension Variable {
 }
 ```
 
-The table is not a domain model and does not own a database connection. It is a schema-facing type that gives DBAL a stable name, columns, and key paths.
+The table only describes the database shape. It does not own a database connection or application behavior; it gives DBAL a stable name, columns, and key paths.
 
 ## Add row capabilities
 
@@ -193,7 +193,7 @@ The query builder returns a new query value when filters are added. This makes i
 
 ## Insert, update, and delete
 
-Repositories translate domain models into table row payloads. The access layer then encodes those payloads and applies the operation to the selected table:
+Repositories translate feature values into table row payloads. The access layer then encodes those payloads and applies the operation to the selected table:
 
 ```swift
 public func insert(_ model: SystemModule.Variable.Model.New) async throws
@@ -247,7 +247,7 @@ The Variable module separates responsibilities into small files:
 - `Variable+Table+Rows.swift` adds insert, update, detail, list, and delete capabilities.
 - `Variable+List+Query+Database.swift` implements list filtering and pagination.
 - `Variable+Detail+Query+Database.swift` implements one-row lookup.
-- `Variable+Repository+Database.swift` coordinates domain models and table rows.
+- `Variable+Repository+Database.swift` coordinates feature values and table rows.
 - `Variable+Table+Migration.swift` defines the table schema.
 
 This keeps the Database Access Layer close to the feature while preventing raw SQL and database context details from leaking into application use cases.

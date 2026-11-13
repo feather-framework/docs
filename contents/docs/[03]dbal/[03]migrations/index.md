@@ -1,7 +1,7 @@
 ---
 category: "dbal"
 title: "Migrations"
-description: "Define platform-independent schema and seed migrations with Feather DBAL, using the System Module Variable model as an example."
+description: "Define platform-independent schema and seed migrations with Feather DBAL, using the System Module Variable table as an example."
 order: 4
 ---
 
@@ -10,7 +10,7 @@ order: 4
 
 Feather DBAL migrations describe database schema and data changes next to the tables and repositories that use them. They do not write PostgreSQL, MySQL, or SQLite-specific SQL directly. Instead, a migration describes a schema with DBAL types, and the selected `DatabasePlatform` builds the appropriate queries.
 
-The System Module `Variable` model in the [Feather CMS example application](https://github.com/feathercms/feather) is a useful example because it separates table creation, seed data, and the application's migration list.
+The System Module `Variable` table in the [Feather CMS example application](https://github.com/feathercms/feather) is a useful example because it separates table creation, seed data, and the application's migration list.
 
 ## Migration types
 
