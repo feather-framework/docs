@@ -30,6 +30,16 @@
 
     <title>{{page.title}}</title>
 
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        media="(prefers-color-scheme: dark)"
+    >
+
     <link rel="canonical" href="{{page.permalink}}">
     {{#page.hreflang}}
     <link rel="alternate" hreflang="{{lang}}" href="{{url}}">
@@ -51,16 +61,6 @@
     {{#page.css}}<link rel="stylesheet" href="{{.}}">{{/page.css}}
 
     {{> partials.links}}
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
-        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
-        media="(prefers-color-scheme: dark)"
-    >
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
